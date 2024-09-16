@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha seu Filme</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">Escolha seu Filme</a>
+            <ul class="navbar-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#searchSection">Buscar Filme</a></li>
+                <li><a href="#movieResults">Resultados</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="loadingSpinner" class="spinner" style="display: none;">Carregando...</div>
+
+    <div class="container" id="searchSection">
+        <h1>Encontre seu Filme</h1>
+       <form id="searchForm">
+    <input type="text" id="movieName" placeholder="Digite o nome do filme..." />
+    <select id="genreSelect">
+        <option value="">Todos os Gêneros</option>
+        <option value="28">Ação</option>
+        <option value="12">Aventura</option>
+        <option value="16">Animação</option>
+        <option value="35">Comédia</option>
+        <option value="80">Crime</option>
+        <option value="99">Documentário</option>
+        <option value="18">Drama</option>
+        <option value="10751">Família</option>
+        <option value="14">Fantasia</option>
+        <option value="36">História</option>
+        <option value="27">Terror</option>
+        <option value="10402">Música</option>
+        <option value="9648">Mistério</option>
+        <option value="10749">Romance</option>
+        <option value="878">Ficção Científica</option>
+        <option value="10770">Cinema TV</option>
+        <option value="53">Thriller</option>
+        <option value="10752">Guerra</option>
+        <option value="37">Faroeste</option>
+    </select>
+    <button type="submit">Buscar</button>
+</form>
+
+        <div id="movieResults" class="movie-grid">
+            <!-- Resultados dos filmes aparecerão aqui -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
