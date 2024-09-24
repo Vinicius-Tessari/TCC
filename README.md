@@ -22,6 +22,6 @@ Um site simples que recomenda filmes com base no que você pede.
    ```bash
    git clone (https://github.com/Vinicius-Tessari/TCC/)
 
-## LINK DA DOCUMENTAÇÃO
-https://docs.google.com/document/d/10qIJcOmo1dquZ8Qhe7rxRVFu_aO3T7sE/edit?usp=sharing&ouid=116592775134817404316&rtpof=true&sd=true
+## [Link da Documentação](https://docs.google.com/document/d/10qIJcOmo1dquZ8Qhe7rxRVFu_aO3T7sE/edit?usp=sharing&ouid=116592775134817404316&rtpof=true&sd=true)
+
 
