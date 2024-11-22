@@ -7,14 +7,16 @@ Um site simples que recomenda filmes com base no que você pede.
 - HTML
 - CSS
 - JavaScript
-- API da TMDB e Inteligência artificial
+- API do TMDB
+- API VLibras
 
 ## Funcionalidades
 
 - Busca de filmes
-- Indicação de filmes com inteligência artificial
-- Trailers, sinopse, avaliações e continuações de filmes
+- Trailers, sinopse, indicações de onde assistir, avaliações e continuações de filmes
 - Lista de filmes mais assistidos do mês
+- Lista de favoritos
+- VLibras, API que traduz conteúdos digitais para a Língua Brasileira de Sinais (LIBRAS)
 
 ## Como Usar
 
