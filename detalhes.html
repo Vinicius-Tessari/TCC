@@ -1,45 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Filme</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
 </head>
+
 <body>
-    <!-- Barra de navegação -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">Escolha seu Filme</a>
-            <ul class="navbar-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#searchSection">Buscar Filme</a></li>
-            </ul>
-        </div>
+    <div class="navbar">
+        <a href="index.html" class="navbar-logo">Início</a>
+        <form id="searchForm" class="navbar-search">
+        </form>
+    </div>
     </nav>
 
     <div class="container">
-        <h1 id="movieTitle">Carregando...</h1>
-        
-        <!-- Mantemos o pôster e as informações do filme -->
-        <div id="movieDetails" class="movie-details-container">
-            <img id="moviePoster" class="movie-poster" src="" alt="Poster do Filme">
+        <div class="movie-details-container">
+
+            <div class="movie-poster">
+                <img id="moviePoster" src="" alt="Poster do Filme">
+            </div>
+
             <div class="movie-info">
-                <p id="movieOverview" class="movie-overview">Sinopse: Carregando...</p>
-                <p id="movieReleaseDate" class="movie-release-date">Data de Lançamento: Carregando...</p>
-                <p id="movieRating" class="movie-rating">Avaliação: Carregando...</p>
-                <p id="movieCast" class="movie-cast">Elenco: Carregando...</p>
+                <h1 id="movieTitle">Título do Filme</h1>
+                <p id="releaseDate"></p>
+                <p id="rating"></p>
+                <p id="movieOverview" class="movie-overview"></p>
+
+
+                <div id="watchProviders" class="providers-section">
+                    <h2>Onde Assistir:</h2>
+
+                </div>
             </div>
         </div>
 
-        <!-- Colocando o trailer logo abaixo das informações do filme -->
-        <div id="movieTrailer" class="movie-trailer">
-            <!-- O trailer será inserido aqui -->
+
+        <div class="movie-trailer">
+            <iframe id="movieTrailer" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+
+        <div id="movieCast" class="cast-section">
+            <h2>Elenco</h2>
+            <ul id="castList">
+
+            </ul>
         </div>
     </div>
 
     <script src="detalhes.js"></script>
 </body>
+
 </html>
