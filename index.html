@@ -3,23 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOCALIZADOR DE FILMES</title>
+    <title>Ask Films</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>ASK FILMES</h1>
-        <form id="userInputForm"> <!-- Mudei o ID para userInputForm -->
-            <label>DIGITE O TIPO DE FILME QUE DESEJA ASSISTIR</label>
-            <p></p>
-            <textarea id="userInput" rows="5" cols="80" placeholder="Digite o estilo de filme que deseja assistir"></textarea> <!-- Mudei o ID para userInput -->
-            <p></p>
-            <button type="submit">ENCONTRAR</button>
-        </form>
-
-        <div id="movieResults" class="movie-grid">
+    
+    <header class="navbar">
+        <div class="navbar">
+            <a href="index.html" class="navbar-logo">Início</a>
+            <form id="searchForm" class="navbar-search">
+                <input type="text" id="searchInput" placeholder="Pesquisar filmes...">
+                <button type="submit">Buscar</button>
+            </form>
         </div>
-    </div>
+    </header>
+    <div id="searchResults" class="search-results-container"></div>
+    
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Bem-vindo(a).</h1>
+                <p>Filtre os filmes da maneira que voce achar melhor. Clique para ver os resultados!</p>
+                <div class="filter-bar">
+                    <select id="genreFilter">
+                        <option value="">Todos os Gêneros</option>
+                        <option value="28">Ação</option>
+                        <option value="12">Aventura</option>
+                        <option value="16">Animação</option>
+                        <option value="35">Comédia</option>
+                        <option value="80">Crime</option>
+                        <option value="99">Documentário</option>
+                        <option value="18">Drama</option>
+                        <option value="10751">Família</option>
+                        <option value="14">Fantasia</option>
+                        <option value="36">História</option>
+                        <option value="27">Terror</option>
+                        <option value="10402">Música</option>
+                        <option value="9648">Mistério</option>
+                        <option value="10749">Romance</option>
+                        <option value="878">Ficção Científica</option>
+                        <option value="10770">Cinema TV</option>
+                        <option value="53">Thriller</option>
+                        <option value="10752">Guerra</option>
+                        <option value="37">Faroeste</option>
+                    </select>
+                    <select id="durationFilter">
+                        <option value="">Todas as Durações</option>
+                        <option value="short">Menos de 90 min</option>
+                        <option value="medium">90-120 min</option>
+                        <option value="long">Mais de 120 min</option>
+                    </select>
+                    <select id="languageFilter">
+                        <option value="">Todos os Idiomas</option>
+                        <option value="en">Inglês</option>
+                        <option value="pt">Português</option>
+                        <option value="es">Espanhol</option>
+                        <option value="fr">Francês</option>
+                        <option value="ja">Japonês</option>
+                    </select>
+                    <input type="number" id="yearFilter" placeholder="Ano de lançamento">
+                    <select id="sortOrderFilter">
+                        <option value="popularity.desc">Mais Populares</option>
+                        <option value="vote_average.desc">Melhor Avaliados</option>
+                        <option value="primary_release_date.desc">Mais Recentes</option>
+                        <option value="primary_release_date.asc">Mais Antigos</option>
+                    </select>
+
+                    <button id="applyFiltersButton">Aplicar Filtros</button>
+                </div>
+            </div>
+        </div>
+
+   
+</div>
+
+<div class="section-container">
+    <h2 class="section-title">Em Alta</h2>
+    <div id="trendingMoviesContainer" class="results-container"></div>
+</div>
+
+<div class="section-container">
+    <h2 class="section-title">Em Alta no Cinema</h2>
+    <div id="cinemaMoviesContainer" class="results-container"></div>
+</div>
+
+<div class="section-container">
+    <h2 class="section-title">Em Alta no Streaming</h2>
+    <div id="streamingMoviesContainer" class="results-container"></div>
+</div>
+
+<div class="section-container">
+    <h2 class="section-title">Próximos Lançamentos</h2>
+    <div id="upcomingMoviesContainer" class="results-container"></div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
