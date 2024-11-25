@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Google Play Movies', url: 'https://play.google.com/store/movies' },
         { name: 'Microsoft Store', url: 'https://www.microsoft.com/store/movies-and-tv' },
         { name: 'Apple TV+', url: 'https://www.apple.com/br/apple-tv-plus/' },
-        { name: 'Max', url: 'https://www.max.com'}
+        { name: 'Max', url: 'https://www.max.com'},
+        { name: 'Disney Plus', url: 'https://www.disneyplus.com/pt-br'}
     ];   
 
     if (movieId) {
