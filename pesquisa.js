@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
         fetchMovies(apiUrl, 'movieResults');
     }
 
+    // Função para truncar texto
+    function truncateText(text, maxLength) {
+        if (text.length > maxLength) {
+            return text.substring(0, maxLength) + '...';
+        }
+        return text;
+    }
 
     function fetchMovies(apiUrl, containerId) {
         const container = document.getElementById(containerId);
@@ -30,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-
     function displayMovies(movies, container) {
         container.innerHTML = '';
 
@@ -47,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 : 'Sem avaliação';
 
             const synopsis = movie.overview
-                ? movie.overview
+                ? truncateText(movie.overview, 100) // Trunca a sinopse para 100 caracteres
                 : 'Sinopse não disponível.';
 
             movieElement.innerHTML = `
