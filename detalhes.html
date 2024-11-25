@@ -1,57 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Filme</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Detalhes do Filme</title>
 </head>
-
 <body>
-    <div class="navbar">
-        <a href="index.html" class="navbar-logo">Início</a>
-        <form id="searchForm" class="navbar-search">
-        </form>
-    </div>
-    </nav>
+    
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="home-button">
+                <img src="Imagens/logo.png" alt="Início" class="navbar-button-image">
+            </a> 
+            <a href="favoritos.html" class="navbar-link">Meus Favoritos</a>
+        </nav>
+    </header>
 
-    <div class="container">
+    <main>
+
         <div class="movie-details-container">
-
             <div class="movie-poster">
                 <img id="moviePoster" src="" alt="Poster do Filme">
             </div>
-
             <div class="movie-info">
-                <h1 id="movieTitle">Título do Filme</h1>
-                <p id="releaseDate"></p>
-                <p id="rating"></p>
-                <p id="movieOverview" class="movie-overview"></p>
-
-
-                <div id="watchProviders" class="providers-section">
-                    <h2>Onde Assistir:</h2>
-
+                <h1 id="movieTitle"></h1>
+                <p><strong>Data de lançamento:</strong> <span id="releaseDate"></span></p>
+                <p><strong>Avaliação:</strong> <span id="rating"></span></p>
+                <p id="movieOverview"></p>
+                <div class="streaming-info">
+                    <h3>Disponível em:</h3>
+                    <ul id="watchProviders"></ul>
                 </div>
+                <button id="favoriteButton" class="favorite-btn">Adicionar aos Favoritos</button>
+                <button id="trailerButton" class="btn-trailer">Assistir Trailer</button>
             </div>
         </div>
 
-
-        <div class="movie-trailer">
-            <iframe id="movieTrailer" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-
-        <div id="movieCast" class="cast-section">
+        <div class="movie-cast">
             <h2>Elenco</h2>
-            <ul id="castList">
-
-            </ul>
+            <div class="cast-list" id="castList"></div>
         </div>
-    </div>
-
+        
+        <div class="related-movies-container">
+            <h2>Filmes Semelhantes</h2>
+            <div class="related-movies" id="relatedMovies"></div>
+        </div>
+        
+        <div id="trailerModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <iframe id="trailerFrame" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
     <script src="detalhes.js"></script>
 </body>
-
 </html>
