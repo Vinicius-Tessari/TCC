@@ -28,4 +28,4 @@ Our platform allows you to search, filter and discover new titles with ease.
 2. Open index.html
 
 ## [Documentation Link]:
-## [link](https://docs.google.com/document/d/1PcEX1P83F7BVFSLST-jxupUylld4nXo8/edit?usp=sharing&ouid=116592775134817404316&rtpof=true&sd=true)
+## [link](https://docs.google.com/document/d/15X8x1pnm8ZeI1hxzxAnRYUp2BsB-dixzTTm5tGhHrns/edit?usp=sharing)
