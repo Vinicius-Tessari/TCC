@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const watchProviders = [
         { name: 'Netflix', url: 'https://www.netflix.com' },
         { name: 'Claro TV+', url: 'https://www.clarotvmais.com.br' },
-        { name: 'Netflix Basic with Ads', url: 'https://www.netflix.com/signup/planform' },
         { name: 'Claro Video', url: 'https://www.clarovideo.com' },
         { name: 'Amazon Prime Video', url: 'https://www.primevideo.com' },
         { name: 'Google Play Movies', url: 'https://play.google.com/store/movies' },
@@ -14,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Apple TV+', url: 'https://www.apple.com/br/apple-tv-plus/' },
         { name: 'Max', url: 'https://www.max.com'},
         { name: 'Disney Plus', url: 'https://www.disneyplus.com/pt-br'}
-    ];   
+    ];
+    let movieData = null;   
 
     if (movieId) {
         fetchMovieDetails(movieId);
@@ -30,7 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(movieDetailsUrl)
             .then(response => response.json())
             .then(data => {
+                movieData = data;
                 displayMovieDetails(data);
+                updateFavoriteButton(movieId);
             })
             .catch(error => {
                 console.error('Erro ao buscar detalhes do filme:', error);
@@ -229,9 +231,8 @@ document.addEventListener('DOMContentLoaded', function () {
         favoriteButton.classList.toggle('favorite-btn', !isFavorited);
     }
 
-    // Evento de clique no botão de favoritos
     favoriteButton.addEventListener('click', function () {
-        if (!movieData) return; // Garante que os dados do filme foram carregados
+        if (!movieData) return;
         const movie = {
             id: movieId,
             title: movieData.title,
@@ -265,5 +266,5 @@ document.addEventListener('DOMContentLoaded', function () {
         favorites = favorites.filter(movie => movie.id !== id);
         localStorage.setItem('favorites', JSON.stringify(favorites));
         alert('Filme removido dos favoritos!');
-    }    
+    }
 });
