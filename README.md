@@ -25,7 +25,7 @@ Our platform allows you to search, filter and discover new titles with ease.
    ```bash
    git clone (https://github.com/Vinicius-Tessari/TCC/)
 
+2. Open index.html
+
 ## [Documentation Link]:
-## [Link da Documentação](https://docs.google.com/document/d/10qIJcOmo1dquZ8Qhe7rxRVFu_aO3T7sE/edit?usp=sharing&ouid=116592775134817404316&rtpof=true&sd=true)
-
-
+## [Link da Documentação](https://docs.google.com/document/d/1PcEX1P83F7BVFSLST-jxupUylld4nXo8/edit?usp=sharing&ouid=116592775134817404316&rtpof=true&sd=true)
