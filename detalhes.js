@@ -253,47 +253,37 @@ document.addEventListener('DOMContentLoaded', function () {
         const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         return favorites.some(movie => movie.id === parseInt(id));
     }
-    
-    function saveFavorite(movie) {
+
+    function toggleFavorite() {
+        if (!movieData) return;
+
         const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        if (isFavorite(movie.id)) {
-            alert('Este filme já está nos seus favoritos!');
-            return;
+        const index = favorites.findIndex(movie => movie.id === parseInt(movieId));
+
+        if (index === -1) {
+            favorites.push({
+                id: parseInt(movieId),
+                title: movieData.title,
+                poster: movieData.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${movieData.poster_path}`
+                    : 'https://via.placeholder.com/500x750?text=No+Image'
+            });
+            alert('Filme adicionado aos favoritos!');
+        } else {
+            favorites.splice(index, 1);
+            alert('Filme removido dos favoritos!');
         }
-        favorites.push(movie);
+
         localStorage.setItem('favorites', JSON.stringify(favorites));
-        alert('Filme adicionado aos favoritos!');
+        updateFavoriteButton();
     }
-    
-    function removeFavorite(id) {
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        favorites = favorites.filter(movie => movie.id !== parseInt(id));
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-        alert('Filme removido dos favoritos!');
-    }
-    
-    function updateFavoriteButton(id) {
-        const isFavorited = isFavorite(id);
-        const favoriteButton = document.getElementById('favoriteButton');
+
+    function updateFavoriteButton() {
+        const isFavorited = isFavorite(movieId);
         favoriteButton.textContent = isFavorited ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos';
         favoriteButton.classList.toggle('remove-favorite-btn', isFavorited);
         favoriteButton.classList.toggle('favorite-btn', !isFavorited);
     }
-    
-    document.getElementById('favoriteButton').addEventListener('click', function () {
-        if (!movieData) return;
-        const movie = {
-            id: parseInt(movieId),
-            title: movieData.title,
-            poster: movieData.poster_path
-                ? `https://image.tmdb.org/t/p/w500${movieData.poster_path}`
-                : 'https://via.placeholder.com/500x750?text=Sem+Imagem'
-        };
-        if (isFavorite(movie.id)) {
-            removeFavorite(movie.id);
-        } else {
-            saveFavorite(movie);
-        }
-        updateFavoriteButton(movieId);
-    })
-})
+
+    favoriteButton.addEventListener('click', toggleFavorite);
+});
