@@ -414,8 +414,10 @@ a {
     background-color: transparent;
     border: none;
     font-size: 24px;
+    margin-right: 2px;
     color: #ffffff;
     cursor: pointer;
+    
 }
 
 .search-icon-button:hover {
@@ -424,8 +426,12 @@ a {
 
 .navbar-search {
     display: none;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
+    top: 50px;
+    left: auto;
+    right: 10px;
+    z-index: 1000;
 }
 
 .navbar-search input {
