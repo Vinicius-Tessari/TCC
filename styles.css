@@ -861,7 +861,6 @@ a {
 }
 
 @media screen and (max-width: 1024px) {
-    
     .movie-card {
         width: 150px;
         margin: 10px;
@@ -881,7 +880,6 @@ a {
         overflow: hidden;
         text-overflow: ellipsis;
     }
-
    
     .navbar {
         flex-direction: column;
@@ -897,6 +895,17 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+    .movie-card {
+        width: 140px;
+        margin: 8px;
+    }
+    .movie-card h3 {
+        font-size: 13px;
+    }
+    .movie-card .movie-rating {
+        font-size: 11px;
+    }
+
     .cast-list {
         display: flex;
         flex-wrap: wrap;
@@ -925,6 +934,29 @@ a {
 }
 
 @media screen and (max-width: 480px) {
+    .movie-card {
+        width: 120px;
+        margin: 5px;
+    }
+    .movie-card h3 {
+        font-size: 12px;
+    }
+    .movie-card .movie-rating {
+        font-size: 10px;
+    }
+    .movie-card .movie-synopsis {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar img {
+        height: 30px;
+    }
+
     .cast-list li img {
         width: 60px;
         height: 60px;
