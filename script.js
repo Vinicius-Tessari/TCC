@@ -96,9 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (query) {
                 
                 window.location.href = `pesquisa.html?search=${encodeURIComponent(query)}`;
-            } else {
-                alert('Por favor, insira um nome de filme para buscar.');
-            }
+            } 
         });
     }
  
@@ -161,7 +159,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function toggleSearch() {
     const searchBar = document.querySelector('.navbar-search');
+    const searchButton = document.querySelector('.search-icon-button');
+    
     searchBar.classList.toggle('active');
+    
+    if (searchBar.classList.contains('active')) {
+        searchButton.style.display = 'none';
+    } else {
+        searchButton.style.display = 'inline-block';
+    }
 }
 
 function renderMovies(movies) {
@@ -244,9 +250,6 @@ function removeFavorite(movieId) {
     favorites = favorites.filter(movie => movie.id !== parseInt(movieId));
     localStorage.setItem('favorites', JSON.stringify(favorites));
     alert('Filme removido dos favoritos!');
-    if (window.location.pathname.includes('favoritos.html')) {
-        loadFavoritesPage();
-    }
 }
   
   document.addEventListener('DOMContentLoaded', () => {
@@ -273,12 +276,19 @@ function loadFavoritesPage() {
         const movieElement = document.createElement('div');
         movieElement.classList.add('movie-card');
         movieElement.innerHTML = `
-            <img src="${movie.poster}" alt="${movie.title}">
-            <h3>${movie.title}</h3>
+            <img src="${movie.poster}" alt="${movie.title}" class="movie-poster">
+            <h3 class="movie-title">${movie.title}</h3>
             <button class="remove-favorite-btn" data-id="${movie.id}">Remover</button>
         `;
 
-        movieElement.querySelector('.remove-favorite-btn').addEventListener('click', () => {
+        movieElement.addEventListener('click', (event) => {
+            if (!event.target.classList.contains('remove-favorite-btn')) {
+                window.location.href = `detalhes.html?movieId=${movie.id}`;
+            }
+        });
+
+        movieElement.querySelector('.remove-favorite-btn').addEventListener('click', (event) => {
+            event.stopPropagation();
             removeFavorite(movie.id);
             loadFavoritesPage();
         });
@@ -288,5 +298,3 @@ function loadFavoritesPage() {
 }
 
 document.addEventListener('DOMContentLoaded', loadFavoritesPage);
-
-
