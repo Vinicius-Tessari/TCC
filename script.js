@@ -187,9 +187,9 @@ function renderMovies(movies) {
     });
   
     setupFavoriteButtons();
-  }
+}
   
-  function setupFavoriteButtons() {
+function setupFavoriteButtons() {
     document.querySelectorAll(".favorite-btn").forEach(button => {
       button.addEventListener("click", (event) => {
         const id = button.getAttribute("data-id");
@@ -200,14 +200,14 @@ function renderMovies(movies) {
         saveFavorite(movie);
       });
     });
-  }
+}
 
-  function saveFavorite(movie) {
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
+function saveFavorite(movie) {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     const alreadyFavorite = favorites.some(fav => fav.id === movie.id);
+
     if (alreadyFavorite) {
-        alert('Este filme já está nos seus favoritos!');
+        console.warn('Este filme já está nos favoritos!');
         return;
     }
 
@@ -246,9 +246,10 @@ function loadFavorites() {
 }
 
 function removeFavorite(movieId) {
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    favorites = favorites.filter(movie => movie.id !== parseInt(movieId));
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const updatedFavorites = favorites.filter(movie => movie.id !== parseInt(movieId));
+
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     alert('Filme removido dos favoritos!');
 }
   
