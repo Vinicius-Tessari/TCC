@@ -23,7 +23,7 @@ Our platform allows you to search, filter and discover new titles with ease.
 
 1. Clone this repository:
    ```bash
-   git clone (https://github.com/Vinicius-Tessari/TCC/)
+   git clone https://github.com/Vinicius-Tessari/TCC/
 
 2. Open index.html
 
